@@ -9,6 +9,9 @@ The Y_label is derived from the column containing the respective drugs, while th
 
 #### Drug Column:
 Drugs are transformed into standardized codes using either the ATC Third Level or AHFS (Pharmacologic-Therapeutic Classification System) coding systems, ensuring uniformity and consistency in drug representation.
+<div align="center">
+  <img src="https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/468b668b-db6b-43be-88da-ab679d6f5c22" alt="common labels" style="width:350px;height:250px;">
+</div>
 
 #### Symptom Column:
 1. **Feature Representation:**
@@ -33,6 +36,7 @@ As a classification problem, our model recommends drugs based on symptoms. The p
 
 * **Jaccard Coefficient and F1 Score:**
   - Set-based metrics measuring similarity between predicted and true sets of drugs.
+![Correct Predictions](https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/d17b11d5-6e1e-473b-b5a5-47402421032d)
 
 # Model after BayesSearch Fine-Tuning
 
@@ -48,6 +52,8 @@ MultiOutputClassifier(estimator=RandomForestClassifier(bootstrap=False,
 ```
 The subsequent Jaccard scores increased, indicating better model accuracy (e.g., from 0.4100 to 0.4298), and the F1 scores also showed enhancement (e.g., from 0.5607 to an improved 0.5802). This demonstrates the efficacy of the fine-tuning process and justifies the hyperparameter choices, as the optimized model better captures underlying patterns in the data, leading to superior predictive performance.
 ![tree](https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/17d16929-b0c2-44cc-a0a8-decdbe6a36c6)
-![BayesSearch](https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/12877a3c-9f64-4789-8e46-7365525db704)
+<div align="center">
+  <img src="https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/12877a3c-9f64-4789-8e46-7365525db704" alt="BayesSearch" style="width:395px;height:250px;">
+</div>
 
 
