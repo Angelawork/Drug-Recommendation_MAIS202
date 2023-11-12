@@ -1,47 +1,53 @@
-# Drug-Recommendation_MAIS202
+# Drug Recommendation_MAIS202
+
 ## Methodology
+
 ### a. Data Preprocessing
-Inputs: 
-The column containing the respective drugs will serve
-as our Y_label, while the remaining columns containing
-symptom and patient information will be considered as
-X_features.
 
-Drug column: 
-The drugs are transformed into standardized
-codes using either the ATC Third Level or AHFS
-(Pharmacologic-Therapeutic Classification System) coding
-systems. This standardization ensures uniformity and consistency
-in drug representation.
+#### Inputs:
+The Y_label is derived from the column containing the respective drugs, while the X_features consist of columns containing symptom and patient information.
 
-Symptom column:
-1. Feature Representation: For symptom representation, we
-consider multiple techniques such as one-hot encoding,
-Bag-of-Words (BOW), or Term Frequency-Inverse
-Document Frequency (TF-IDF) based on the specific
-requirements of the task.
-2. Feature Selection: To manage computational complexity
-and focus on the most relevant information, we narrow
-down our symptom features to the top 500 most popular
-symptoms. This selection ensures a balance between
-informativeness and computational efficiency.
+#### Drug Column:
+Drugs are transformed into standardized codes using either the ATC Third Level or AHFS (Pharmacologic-Therapeutic Classification System) coding systems, ensuring uniformity and consistency in drug representation.
 
-### b.Evaluation Metric
-Our project is a classification problem, where based on certain
-symptoms, our model will classify or recommend a set of drugs.
-Therefore, the primary evaluation metric that would be relevant here is
-the confusion matrix, accuracy, precision-recall, and logistic loss for the
-classification problem.
-* Confusion Matrix and Related Metrics: The confusion matrix will give a clear picture of the True
-Positives, True Negatives, False Positives, and False Negatives.
-○ Accuracy = (TP+TN) / (TP+TN+FP+FN)
-○ Precision = TP / (TP + FP)
-○ Recall = TP / (TP + FN)
-○ F1-Score = 2 * (Precision * Recall) / (Precision + Recall)
-* Logistic Loss (Log Loss): Since our model outputs probabilities,
-log loss will give an idea about the confidence of the predictions.
-It penalizes wrong predictions that are made with high
-confidence.
-* Jaccard Coefficient and F1 score: these are set-based metrics
-which measure the similarity between the predicted set of drugs
-and the true set of drugs.
+#### Symptom Column:
+1. **Feature Representation:**
+   - Utilizing techniques such as one-hot encoding, Bag-of-Words (BOW), or Term Frequency-Inverse Document Frequency (TF-IDF) based on task-specific requirements.
+   
+2. **Feature Selection:**
+   - Narrowing down symptom features to the top 500 most popular symptoms to manage computational complexity while maintaining informativeness and computational efficiency.
+
+### b. Evaluation Metric
+
+As a classification problem, our model recommends drugs based on symptoms. The primary evaluation metrics include:
+
+* **Confusion Matrix and Related Metrics:**
+  - Provides insight into True Positives, True Negatives, False Positives, and False Negatives.
+  - Accuracy = (TP+TN) / (TP+TN+FP+FN)
+  - Precision = TP / (TP + FP)
+  - Recall = TP / (TP + FN)
+  - F1-Score = 2 * (Precision * Recall) / (Precision + Recall)
+
+* **Logistic Loss (Log Loss):**
+  - Evaluates prediction confidence by penalizing wrong predictions made with high confidence.
+
+* **Jaccard Coefficient and F1 Score:**
+  - Set-based metrics measuring similarity between predicted and true sets of drugs.
+
+# Model after BayesSearch Fine-Tuning
+
+The initial evaluation of the Random Forest Classifier, using the MultiOutputClassifier with specific hyperparameters, yielded Jaccard scores of 0.4100 and F1 scores of 0.5607. After fine-tuning through BayesSearchCV, the chosen hyperparameters (as shown below) resulted in improved performance:
+
+```python
+MultiOutputClassifier(estimator=RandomForestClassifier(bootstrap=False,
+                                                       max_depth=37,
+                                                       min_samples_leaf=4,
+                                                       min_samples_split=14,
+                                                       n_estimators=112,
+                                                       random_state=42))
+```
+The subsequent Jaccard scores increased, indicating better model accuracy (e.g., from 0.4100 to 0.4298), and the F1 scores also showed enhancement (e.g., from 0.5607 to an improved 0.5802). This demonstrates the efficacy of the fine-tuning process and justifies the hyperparameter choices, as the optimized model better captures underlying patterns in the data, leading to superior predictive performance.
+![tree](https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/17d16929-b0c2-44cc-a0a8-decdbe6a36c6)
+![BayesSearch](https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/12877a3c-9f64-4789-8e46-7365525db704)
+
+
