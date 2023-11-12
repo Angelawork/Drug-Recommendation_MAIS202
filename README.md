@@ -38,6 +38,12 @@ As a classification problem, our model recommends drugs based on symptoms. The p
   - Set-based metrics measuring similarity between predicted and true sets of drugs.
 ![Correct Predictions](https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/d17b11d5-6e1e-473b-b5a5-47402421032d)
 
+## Preliminary results
+Jaccard Similarity and F1 Score Comparison between models
+<div align="center">
+  <img src="https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/6f778b3f-b96d-4c9f-9fac-09cc7efc2842" alt="metric compare" style="width:395px;height:250px;">
+</div>
+
 # Model after BayesSearch Fine-Tuning
 
 The initial evaluation of the Random Forest Classifier, using the MultiOutputClassifier with specific hyperparameters, yielded Jaccard scores of 0.4100 and F1 scores of 0.5607. After fine-tuning through BayesSearchCV, the chosen hyperparameters (as shown below) resulted in improved performance:
