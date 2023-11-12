@@ -56,4 +56,6 @@ The subsequent Jaccard scores increased, indicating better model accuracy (e.g.,
   <img src="https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/12877a3c-9f64-4789-8e46-7365525db704" alt="BayesSearch" style="width:395px;height:250px;">
 </div>
 
+### Confusion matrix for prediction performance on Top 5 most common Drugs appeared in dataset, for a total of 44204 datapoints in y_test
+![demonstration](https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/75dd1106-1798-4051-b7a6-b862774f72fb)
 
