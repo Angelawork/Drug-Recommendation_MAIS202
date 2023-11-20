@@ -1,5 +1,35 @@
 # Drug Recommendation_MAIS202
 
+## Launch the Web App
+
+To launch the web app, follow these steps:
+
+1. Install all the required packages by executing the following command in your terminal:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2. Change into the MAIS202_WebAPP directory of this repository using `cd`:
+
+    ```bash
+    cd path/to/MAIS202_WebAPP
+    ```
+
+3. Run the web app using the following command:
+
+    ```bash
+    python web_app.py
+    ```
+
+4. Open your web browser and navigate to [http://localhost:5000](http://localhost:5000).
+
+Now, you should be able to access and interact with the web app locally.
+<div align="center">
+    <img src="https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/0e49c9bf-e183-43cc-8571-e54eb9372c17" alt="app" style="width:425px;height:250px;">
+  <img src="https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/1e5f9523-dd51-484d-b91b-dbf9cef5de70" alt="app" style="width:425px;height:250px;">
+</div>
+
 ## Methodology
 
 ### a. Data Preprocessing
