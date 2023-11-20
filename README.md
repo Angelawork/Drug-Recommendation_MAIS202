@@ -1,4 +1,7 @@
-# Drug Recommendation_MAIS202
+# Drug Recommendation_MedAdvisor_MAIS202 Project
+<div align="center">
+    <img src="https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/0e49c9bf-e183-43cc-8571-e54eb9372c17" alt="app" style="width:425px;height:250px;">
+</div>
 
 ## Launch the Web App
 
@@ -26,8 +29,7 @@ To launch the web app, follow these steps:
 
 Now, you should be able to access and interact with the web app locally.
 <div align="center">
-    <img src="https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/0e49c9bf-e183-43cc-8571-e54eb9372c17" alt="app" style="width:425px;height:250px;">
-  <img src="https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/1e5f9523-dd51-484d-b91b-dbf9cef5de70" alt="app" style="width:425px;height:250px;">
+  <img src="https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/1e5f9523-dd51-484d-b91b-dbf9cef5de70" alt="app" style="width:425px;height:225px;">
 </div>
 
 ## Methodology
