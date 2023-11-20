@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedAdvisor</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Josefin Sans", sans-serif;
+        box-sizing: border-box;
+      }
+      .container-fluid {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: #fff;
+      }
+      /* ============= Animation background ========= */
+      .background {
+        background: linear-gradient(132deg, #1f1b5d, #4f4fa8, #6cf6db);
+        background-size: 400% 400%;
+        animation: Gradient 15s ease infinite;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        padding: 0;
+        margin: 0px;
+      }
+      .cube {
+        position: absolute;
+        top: 80vh;
+        left: 45vw;
+        width: 10px;
+        height: 10px;
+        border: solid 1px #d7d4e4;
+        transform-origin: top left;
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        animation: cube 12s ease-in forwards infinite;
+      }
+      .cube:nth-child(2n) {
+        width: 15px;
+        height: 15px;
+        border-color: #fff;
+      }
+      .cube:nth-child(2) {
+        width: 15px;
+        height: 15px;
+        animation-delay: 2s;
+        left: 25vw;
+        top: 40vh;
+      }
+      .cube:nth-child(3) {
+        width: 35px;
+        height: 35px;
+        animation-delay: 4s;
+        left: 75vw;
+        top: 50vh;
+      }
+      .cube:nth-child(4) {
+        animation-delay: 6s;
+        left: 90vw;
+        top: 10vh;
+      }
+      .cube:nth-child(5) {
+        animation-delay: 8s;
+        left: 10vw;
+        top: 85vh;
+      }
+      .cube:nth-child(6) {
+        animation-delay: 10s;
+        left: 50vw;
+        top: 10vh;
+      }
+      /* ================= Header ============ */
+      header {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      /* navbar */
+      nav {
+        color: #fff;
+        float: right;
+        margin: 30px 90px;
+      }
+      nav ul {
+        list-style: none;
+      }
+      nav ul li {
+        float: left;
+        transition: 0.3s;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #efeef5;
+        transition: 0.5;
+        font-size: 15px;
+        margin-left: 16px;
+      }
+      nav ul li:hover a {
+        text-decoration: none;
+        color: #591bc5;
+      }
+      nav ul li:hover {
+        height: 45px;
+        padding-top: 30px;
+        margin-top: -30px;
+        background: #efeef5;
+        text-decoration: none;
+        transform: skew(15deg);
+      }
+      /* Logo */
+      .logo {
+        width: 35px;
+        height: 35px;
+        background: #efeef5;
+        margin: 40px 63px;
+        float: left;
+        transform: rotate(-30deg);
+      }
+      .logo span {
+        color: #591bc5;
+        font-size: 2em;
+        line-height: 1.4;
+        padding-left: 5px;
+        font-weight: bold;
+      }
+      /* Header content & title & button*/
+      .header-content {
+        margin-top: 15%;
+        text-align: center;
+        color: #efeef5;
+      }
+      .header-content h1 {
+        text-transform: uppercase;
+        font-size: 3em;
+        letter-spacing: 1px;
+      }
+      .header-content p {
+        font-size: 20px;
+        line-height: 1.5;
+        margin: 10px auto;
+      }
+      .header-content button {
+        width: 140px;
+        margin: 20px 10px;
+        color: #591bc5;
+        font-size: 17px;
+        border: 1px solid #efeef5;
+        font-weight: 500;
+        background: #efeef5;
+        border-radius: 20px;
+        padding: 10px;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+      .header-content button:hover {
+        border-radius: 0;
+      }
+      /* Animate Background*/
+      @keyframes Gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      @keyframes cube {
+        from {
+          transform: scale(0) rotate(0deg) translate(-50%, -50%);
+          opacity: 1;
+        }
+        to {
+          transform: scale(20) rotate(960deg) translate(-50%, -50%);
+          opacity: 0;
+        }
+      }
+      .cta-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ea6faf;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: 0.3s ease, color 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: rgb(236, 209, 45);
+        text-decoration: none;
+        transform: skew(15deg) scale(1.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- Background animation -->
+      <div class="background">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+      </div>
+
+      <!-- Header -->
+      <header>
+        <!-- Navbar -->
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+          </ul>
+        </nav>
+        <!-- Logo -->
+        <img
+          src="static\Images\Medical Tool.png"
+          alt="medicine"
+          style="
+            width: 50%;
+            max-width: 150px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          "
+        />
+        <!-- Header content & title & button-->
+        <section class="header-content">
+          <h1>- MedAdvisor - <br />Explore the Medication you need</h1>
+          <p>
+            Wour user-friendly platform is designed to provide you with accurate
+            <br />
+            and helpful insights. Explore the world of medications with
+            confidence and <br />make informed decisions about your health.
+            Welcome to a smarter approach to <br />healthcare —— welcome to
+            <br />
+            MedAdvisor
+          </p>
+          <a href="/predict" class="cta-button">How do you feel today?</a>
+        </section>
+      </header>
+    </div>
+  </body>
+</html>

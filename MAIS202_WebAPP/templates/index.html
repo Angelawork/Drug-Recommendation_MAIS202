@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='cat.css') }}" />
+
+    <title>MedAdvisor</title>
+  </head>
+  <div class="fade-out"></div>
+  <body>
+    <div id="cursor-light"></div>
+    <div class="cat">
+      <div class="ear ear--left"></div>
+      <div class="ear ear--right"></div>
+      <div class="face">
+        <div class="eye eye--left">
+          <div class="eye-pupil"></div>
+        </div>
+        <div class="eye eye--right">
+          <div class="eye-pupil"></div>
+        </div>
+        <div class="muzzle"></div>
+      </div>
+      <img
+        src="{{ url_for('static', filename='mouth.png') }}"
+        class="positioned-image"
+      />
+    </div>
+    <div class="bottom-text">
+      Curiosity Didn't Kill the Cat, but Good Health Saved It
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
+<!--MedAdvisor-->

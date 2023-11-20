@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tell Us How You Feel</title>
+    <style>
+      body {
+        background: linear-gradient(-45deg, #eeaeca, #dfaddf, #94bbe9, #a6caf4);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        height: 100vh;
+        font-family: "Tahoma", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #eef2f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .container {
+        width: 60%;
+        background: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 48px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #3339;
+        font-size: 16px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      .submit {
+        background-color: #ff69b4;
+        color: white;
+        padding: 15px 30px;
+        margin: 20px 0;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        width: 50%;
+        font-size: 18px;
+        transition: 0.3s ease, transform 0.3s ease;
+      }
+
+      .submit:hover {
+        background-color: #5a8dbb;
+        transform: scale(1.1);
+      }
+
+      button {
+        width: 140px;
+        color: #8a9197;
+        font-size: 17px;
+        border: 1px solid #efeef5;
+        font-weight: 500;
+        background: #c4f671;
+        border-radius: 20px;
+        padding: 10px;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+      button:hover {
+        transform: scale(1.1);
+        border-radius: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tell Us How You Feel</h1>
+      <p>
+        Your well-being matters, and we're here to listen. Whether you're
+        experiencing specific symptoms or just want to share your overall health
+        status, this space is designed for you to express yourself. Your input
+        enables us to provide personalized recommendations and insights tailored
+        to your unique needs.
+      </p>
+
+      <div class="input-group">
+        <form id="symptom-form">
+          <label for="symptoms"
+            >Enter your symptoms, separated by commas:</label
+          >
+          <input type="text" id="symptoms" name="symptoms" required />
+          <button type="submit" class="submit" name="submit">
+            Get Started
+          </button>
+        </form>
+        <button onclick="window.location.href='/main'">Home</button>
+      </div>
+
+      <script>
+        document
+          .getElementById("symptom-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            var symptoms = document.getElementById("symptoms").value;
+
+            var symptomsArray = symptoms.split(",");
+
+            var symptomsString =
+              "[" +
+              symptomsArray.map((item) => "'" + item + "' ").join(" ") +
+              "]";
+
+            console.log(symptomsString);
+            fetch("/predict", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                symptoms: symptomsString,
+              }),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                var predictedAtc = data.predicted_atc;
+                sessionStorage.setItem("predictedAtc", predictedAtc);
+                console.log(predictedAtc);
+                // Redirect to result.html
+                window.location.href = "/result";
+              })
+              .catch((error) => console.error("Error:", error));
+
+            // Disable the button to prevent multiple submissions
+            document.getElementById("symptom-form").submit.disabled = true;
+          });
+      </script>
+    </div>
+  </body>
+</html>

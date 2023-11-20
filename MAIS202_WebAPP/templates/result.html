@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedAdvisor - Your Results</title>
+    <link rel="stylesheet" type="text/css" href="/static/result.css" />
+  </head>
+
+  <body>
+    <section
+      class="container"
+      id="medication-list"
+      aria-label="Medication List"
+    >
+      <h2>Medication That Suits Your Condition</h2>
+
+      <ul id="medicationList"></ul>
+    </section>
+    <button onclick="window.location.href='/main'">Home</button>
+    <script>
+      // Retrieve the predicted medications from session storage
+      var predictedMedications = sessionStorage.getItem("predictedAtc");
+
+      if (predictedMedications) {
+        console.log(
+          "Type of predictedMedications:",
+          typeof predictedMedications
+        );
+
+        // Split the string into an array
+        var medicationsArray = predictedMedications.split(", ");
+
+        // Display the predicted medications in an unordered list
+        var medicationList = document.getElementById("medicationList");
+
+        medicationsArray.forEach(function (medication, index) {
+          var listItem = document.createElement("li");
+          listItem.textContent =
+            "Medication " + (index + 1) + ": " + medication;
+          listItem.style.backgroundColor =
+            index % 2 === 0 ? "#fccf6c" : "#67dbdd";
+          medicationList.appendChild(listItem);
+        });
+      } else {
+        console.error("No data found");
+      }
+    </script>
+  </body>
+</html>
