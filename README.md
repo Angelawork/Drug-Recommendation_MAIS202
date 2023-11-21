@@ -1,7 +1,16 @@
-# Drug Recommendation_MedAdvisor_MAIS202 Project
+# Drug Recommendation_MedAdvisor
 <div align="center">
     <img src="https://github.com/Angelawork/Drug-Recommendation_MAIS202/assets/113480613/0e49c9bf-e183-43cc-8571-e54eb9372c17" alt="app" style="width:425px;height:250px;">
 </div>
+
+## Project description
+
+The problem we are solving is the inconvenience and expense of doctor appointments for common health concerns. 
+
+Our project aims to offer a reliable medicine search system that recommends appropriate medications, leveraging extensive datasets, including medicine reviews, side effects, and interactions, to provide users with cost-effective and rapid healthcare guidance.
+
+We chose this problem because we aim to address the barriers to accessing timely healthcare, including long waits at the hospital. Additionally, factors such as language and cultural barriers, primary care access issues, and challenges in doctor-patient communication further emphasize the need for a recommendation system to improve healthcare accessibility and quality.
+
 
 ## Launch the Web App
 
