@@ -1,8 +1,9 @@
 body {
   background: linear-gradient(
-      -90deg,
-      rgba(133, 255, 189, 1),
-      rgba(223, 173, 223, 1)
+      45deg,
+      rgba(55, 54, 77, 1) 0%,
+      rgba(142, 77, 194, 1) 71%,
+      rgba(108, 217, 246, 1) 100%
     ),
     url("static\Images\background.png") repeat 0 0;
   background-size: cover;
@@ -43,16 +44,15 @@ main {
 .container {
   display: flex;
   justify-content: space-between; /* Added to separate left and right sections */
-  align-items: center;
-  text-align: center;
+  align-items: flex;
+  text-align: flex;
   margin: 2rem auto;
   padding: 50px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.85);
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); /* box shadow */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25); /* box shadow */
   margin: 20px;
   transition: box-shadow 0.3s;
-  flex-wrap: wrap;
 }
 
 .text-container {
@@ -72,12 +72,19 @@ button {
   cursor: pointer;
   transition: 0.3s;
 }
-button:hover {
-  border-radius: 0;
-}
+
 h2 {
-  color: #4987b3;
-  font-size: 36px; /* font size for the heading */
+  color: var(--heading, #1c2f41);
+  align-self: stretch;
+  font-family: Outfit;
+  font-size: 67px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 72px;
+  text-transform: capitalize;
+  text-transform: capitalize;
+  line-height: 72px;
+  word-wrap: break-word;
 }
 
 ul {
@@ -88,12 +95,27 @@ ul {
 }
 
 li {
+  font-family: "Roboto", sans-serif;
   background-color: #d3d3d3;
   margin: 10px 0;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 24px;
+  background: var(--White, #fff);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
+  display: flex;
+  width: 643px;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex-shrink: 0;
+  width: 595px;
+  color: #1c2f41;
+  font-size: 22px;
+  font-family: Outfit;
+  font-weight: 600;
+  word-wrap: break-word;
 }
 
 li:hover {
@@ -102,13 +124,13 @@ li:hover {
 
 button {
   padding: 10px 20px;
-  background-color: #ee3d7f;
+  background-color: #221b1d;
   color: white;
   border: none;
   border-radius: 15px;
   cursor: pointer;
   font-size: 1.5em;
-  transition: background-color 0.3s;
+  transition: 0.5s ease;
 }
 
 button:hover {
